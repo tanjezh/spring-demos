@@ -1,0 +1,11 @@
+server:
+  port: 8081
+
+spring:
+  profiles:
+    active: dev,pre
+
+source: application.yml
+
+config:
+  profile: resource

@@ -1,0 +1,3 @@
+config:
+  env: prod-environment
+  profile: prod-profile

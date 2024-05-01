@@ -1,0 +1,5 @@
+config:
+  whitelist: a,b,c,d,e,f,g
+  ratelimit: 1,2,3
+  total: application-pre
+  profile: pre-profile
