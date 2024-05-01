@@ -6,12 +6,19 @@
 
     <artifactId>spring-boot-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <description>SpringBoot相关演示demo</description>
 
     <parent>
         <groupId>com.tan</groupId>
         <artifactId>spring-demos</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
+    <modules>
+        <module>001-spring-properties</module>
+    </modules>
 
     <dependencies>
         <dependency>

@@ -1,0 +1,7 @@
+dev2:
+  yml:
+    type: 1
+    name: dev.yml.name
+    ary:
+      - a: hello
+      - b: world
