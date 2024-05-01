@@ -1,0 +1,22 @@
+spring:
+  profiles:
+#   开启哪个环境 application-{profile}.properties
+    active: dev
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+
+server:
+  port: 8082
+#  日志配置
+  tomcat:
+    accesslog:
+      enabled: true
+      directory: /logs/boot
+      pattern: '%h %l %u %t "%r" %s %b %Dms "%{Referer}i" "%{User-Agent}i" "%{X-Request-ID}i" "%{X-Forwarded-For}i"'
+      file-date-format: .yyyyMMdd
+
+
