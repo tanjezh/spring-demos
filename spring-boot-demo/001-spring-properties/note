@@ -1,0 +1,2 @@
+git 移除已经添加管理的目录
+git rm --cached -r 目录名 例如：git rm --cached -r .\spring-boot-demo\001-spring-properties\.mvn
