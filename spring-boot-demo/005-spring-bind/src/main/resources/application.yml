@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: bind,dynamic
+
+conf:
+  auto:
+    user: 自动导入
+    pwd: password
+    code: 123
+
+val:
+  inj:
+    - a: 1
+      b: 2
+      c: 3
+    - z: 10
+      zz: 11
+      zzz: 12

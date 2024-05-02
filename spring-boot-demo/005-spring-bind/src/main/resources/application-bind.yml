@@ -1,0 +1,26 @@
+bind:
+  conf:
+    #    测试不存在配置的场景
+    notExist: true
+    Name: tan
+    AGE: 20
+    list:
+      - java
+      - c
+      - python
+    map:
+      wechat: 微信
+      blogs: myblog
+      git: http://github.com
+
+    pwd:
+      user: tan
+      pwd: password
+      code: 9
+    Jwt: '{"token": "11111111123", "timestamp": 1610880489123}'
+    jwtList: '[{"token": "11111111123", "timestamp": 1610880489123}]'
+    tokens:
+      - token: 123
+        timestamp: 1111111
+      - token: abc
+        timestamp: 2222222
