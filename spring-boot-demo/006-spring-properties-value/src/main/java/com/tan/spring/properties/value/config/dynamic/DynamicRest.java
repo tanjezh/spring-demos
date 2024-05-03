@@ -3,7 +3,6 @@ package com.tan.spring.properties.value.config.dynamic;
 import com.tan.spring.properties.value.config.MyPropertySourcesPlaceHolderConfigure;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.PropertySource;

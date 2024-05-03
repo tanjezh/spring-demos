@@ -1,0 +1,9 @@
+test:
+  refresh: ${random.long}
+  key: refresh-test
+
+rand:
+  uuid: ${random.uuid}
+
+server:
+  port: 8081
