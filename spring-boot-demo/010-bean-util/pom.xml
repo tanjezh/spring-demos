@@ -83,6 +83,7 @@
 <!--                            <version>1.4.2.Final</version>-->
 <!--                        </path>-->
                         <!--
+                          参考：https://www.cnblogs.com/arlin321/p/15140447.html
                           lombok 和 mapstruct 同时存在，导致编译报错，需要添加以下组件
                           No property named “XXX“ exists in source parameter(s). Did you mean “null“
                          -->
