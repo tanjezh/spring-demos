@@ -18,6 +18,24 @@
 
     <modules>
         <module>001-spring-properties</module>
+        <module>002-spring-properties-env</module>
+        <module>003-spring-properties-priority</module>
+        <module>004-spring-dynamic-properties</module>
+        <module>005-spring-bind</module>
+        <module>006-spring-properties-value</module>
+        <module>007-spring-properties-event</module>
+        <module>008-simple-log</module>
+        <module>009-spring-log</module>
+        <module>010-bean-util</module>
+        <module>011-spring-bean</module>
+        <module>012-spring-autoconfig</module>
+        <module>013-spring-config-selector</module>
+        <module>014-spring-dynamic-bean</module>
+        <module>015-spring-condition-bean</module>
+        <module>016-spring-beanorder</module>
+        <module>017-spring-beanorder-addition</module>
+        <module>018-spring-beanorder.addition2</module>
+        <module>019-spring-schedule</module>
     </modules>
 
     <dependencies>
