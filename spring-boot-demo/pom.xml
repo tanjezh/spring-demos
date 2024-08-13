@@ -36,6 +36,9 @@
         <module>017-spring-beanorder-addition</module>
         <module>018-spring-beanorder.addition2</module>
         <module>019-spring-schedule</module>
+        <module>020-spring-aop</module>
+        <module>021-spring-aop-logaspect</module>
+        <module>022-event-listener</module>
     </modules>
 
     <dependencies>
