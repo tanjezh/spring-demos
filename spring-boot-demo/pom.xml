@@ -39,6 +39,7 @@
         <module>020-spring-aop</module>
         <module>021-spring-aop-logaspect</module>
         <module>022-event-listener</module>
+        <module>023-spel</module>
     </modules>
 
     <dependencies>
