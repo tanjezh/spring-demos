@@ -41,6 +41,7 @@
         <module>022-event-listener</module>
         <module>023-spel</module>
         <module>024-spel-aop</module>
+        <module>025-db-log</module>
     </modules>
 
     <dependencies>
