@@ -43,6 +43,8 @@
         <module>024-spel-aop</module>
         <module>025-db-log</module>
         <module>026-h2database</module>
+        <module>027-mysql</module>
+        <module>028-transaction</module>
     </modules>
 
     <dependencies>
