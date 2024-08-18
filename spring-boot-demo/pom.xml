@@ -42,6 +42,7 @@
         <module>023-spel</module>
         <module>024-spel-aop</module>
         <module>025-db-log</module>
+        <module>026-h2database</module>
     </modules>
 
     <dependencies>
