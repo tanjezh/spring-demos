@@ -45,6 +45,8 @@
         <module>026-h2database</module>
         <module>027-mysql</module>
         <module>028-transaction</module>
+        <module>029-jdbc-transaction</module>
+        <module>030-jdbctemplate</module>
     </modules>
 
     <dependencies>
