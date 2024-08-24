@@ -47,6 +47,9 @@
         <module>028-transaction</module>
         <module>029-jdbc-transaction</module>
         <module>030-jdbctemplate</module>
+        <module>031-jpa</module>
+        <module>032-jpa-errorcase</module>
+        <module>033-jpa-errorcase2</module>
     </modules>
 
     <dependencies>
