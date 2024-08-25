@@ -8,7 +8,10 @@ spring:
 
 mybatis:
 #  指定 mapper 的文件位置
-  mapper-locations: classpath:sqlmapper/*.xml
+#  mapper-locations: classpath:sqlmapper/*.xml
+  type-aliases-package: com.tan.mybatis.xml.entity
+#  指定 mybatis 的配置文件
+  config-location: classpath:mybatis-config.xml
 
 #
 #  configuration:
