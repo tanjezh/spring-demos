@@ -3,13 +3,15 @@
         PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <!-- 配置mapper.xml中类型的别名，配合pojo中的@Alias("别名")使用 -->
     <typeAliases>
+    <!-- <typeAlias type="com.tan.mybatis.xml.entity.MoneyPo" alias="Money"/> -->
         <!-- 类型别名   -->
         <package name="com.tan.mybatis.xml.entity"/>
     </typeAliases>
 
-    <mappers>
-        <mapper resource="sqlmapper/money-mapper.xml"/>
-    </mappers>
+<!--    <mappers>-->
+<!--        <mapper resource="sqlmapper/money-mapper.xml"/>-->
+<!--    </mappers>-->
 
 </configuration>
