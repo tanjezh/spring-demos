@@ -11,8 +11,7 @@ mybatis:
 #  mapper-locations: classpath:sqlmapper/*.xml
   type-aliases-package: com.tan.mybatis.xml.entity
 #  指定 mybatis 的配置文件
-  config-location: classpath:mybatis-config.xml
+#  config-location: classpath:mybatis-config.xml
 
-#
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

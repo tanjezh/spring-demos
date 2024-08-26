@@ -8,7 +8,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	public Application(MoneyRepository repository) {
-		repository.testMapper();
+//		repository.testBasic();
+//		repository.testByteQuery();
+		repository.testFirstCache(1);
+//		repository.testMapper();
+
 	}
 
 	public static void main(String[] args) {

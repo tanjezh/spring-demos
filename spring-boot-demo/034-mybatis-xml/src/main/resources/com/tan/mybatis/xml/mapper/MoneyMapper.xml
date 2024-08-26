@@ -12,6 +12,7 @@
         <result column="create_at" property="createAt" jdbcType="TIMESTAMP"/>
         <result column="update_at" property="updateAt" jdbcType="TIMESTAMP"/>
     </resultMap>
+
     <sql id="money_po">
         id, name, money, is_deleted, create_at, update_at
     </sql>
@@ -109,7 +110,7 @@
 
 
     <select id="findByIdOrCondition" resultMap="BaseResultMap">
-        select <include refid="money_po"/> from money where id = #{id} or  `name`=#{map.name}
+        select <include refid="money_po"/> from money where id = #{id} or `name`=#{map.name}
     </select>
 
     <select id="findByIdOrConditionV2" resultMap="BaseResultMap">
