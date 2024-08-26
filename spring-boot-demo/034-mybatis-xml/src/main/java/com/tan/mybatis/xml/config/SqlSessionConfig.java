@@ -4,7 +4,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
@@ -15,7 +14,7 @@ import javax.sql.DataSource;
  * @author tanjezh
  * @create 2024-08-26 0:06
  */
-@Configuration
+//@Configuration
 public class SqlSessionConfig {
 
     /**
