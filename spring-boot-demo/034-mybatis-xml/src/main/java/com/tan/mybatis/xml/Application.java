@@ -19,7 +19,10 @@ public class Application {
 //		repository.testMulParameter();
 
 		// 参数替换测试
-		repository.testArgumentReplace();
+//		repository.testArgumentReplace();
+
+//		repository.testResQuery();
+		repository.testV4();
 	}
 
 	public static void main(String[] args) {

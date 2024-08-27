@@ -36,6 +36,13 @@ public class StrTypeHandler extends BaseTypeHandler<Object> {
         }
     }
 
+    /**
+     * jdbc类型转java类型
+     * @param rs
+     * @param columnName
+     * @return
+     * @throws SQLException
+     */
     @Override
     public String getNullableResult(ResultSet rs, String columnName) throws SQLException {
         return rs.getString(columnName);
