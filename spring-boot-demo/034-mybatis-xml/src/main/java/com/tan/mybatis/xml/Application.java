@@ -10,9 +10,13 @@ public class Application {
 	public Application(MoneyRepository repository) {
 //		repository.testBasic();
 //		repository.testByteQuery();
-		repository.testFirstCache(1);
+		// 一级缓存测试
+//		repository.testFirstCache(1);
 //		repository.testMapper();
 
+//		repository.groupBy();
+//		repository.testEnumQuery();
+		repository.testMulParameter();
 	}
 
 	public static void main(String[] args) {

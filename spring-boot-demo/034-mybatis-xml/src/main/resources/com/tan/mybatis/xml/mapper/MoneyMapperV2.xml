@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.tan.mybatis.xml.mapper.MoneyMapperV2">
+    <!-- 结果对象 -->
+    <resultMap id="BaseResultMap" type="com.tan.mybatis.xml.entity.MoneyPo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="money" property="money" jdbcType="INTEGER"/>
+        <result column="is_deleted" property="isDeleted" jdbcType="TINYINT"/>
+        <result column="create_at" property="createAt" jdbcType="TIMESTAMP"/>
+        <result column="update_at" property="updateAt" jdbcType="TIMESTAMP"/>
+        <result column="cnt" property="cnt" jdbcType="INTEGER"/>
+        <result column="bank" property="bank"/>
+    </resultMap>
+
+    <!-- 查询字段 -->
+    <sql id="money_po">
+        id, name, money, is_deleted, create_at, update_at, bank
+    </sql>
+
+    <select id="queryByCondition" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="money_po"/>
+        from money where 1=1
+        <if test="id != null">
+            and id = #{id}
+        </if>
+        <if test="name != null">
+            and `name` = #{name}
+        </if>
+        <if test="is_deleted != null">
+            and `is_deleted` = #{is_deleted}
+        </if>
+    </select>
+
+    <select id="queryByConditionV2" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="money_po"/>
+        from money
+        <where>
+            <if test="id != null">
+                id = #{id}
+            </if>
+            <if test="name != null">
+                and `name` = #{name}
+            </if>
+            <if test="is_deleted != null">
+                and `is_deleted` = #{is_deleted}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryByConditionV3" resultMap="BaseResultMap" parameterType="java.util.Map">
+        select
+        <include refid="money_po"/>
+        from money
+        <where>
+            <choose>
+                <when test="id != null">id = #{id}</when>
+                <when test="name != null">`name` = ${name}</when>
+                <otherwise>id = 1</otherwise>
+            </choose>
+        </where>
+    </select>
+
+    <select id="queryByIds" resultMap="BaseResultMap">
+        select
+        <include refid="money_po"/>
+        from money
+        where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </select>
+
+    <select id="queryByIdAndNames" resultMap="BaseResultMap">
+        select
+        <include refid="money_po"/>
+        from money where (id, `name`) in
+        <foreach collection="items" item="item" separator="," open="(" close=")">
+            (#{item.id}, #(item.name))
+        </foreach>
+    </select>
+
+    <select id="update" parameterType="java.util.Map" resultType="int">
+        update money
+        <set>
+            <if test="name != null">
+                `name` = #{name},
+            </if>
+            <if test="is_deleted != null">
+                `is_deleted` = #{is_deleted}
+            </if>
+        </set>
+        where id = #{id}
+    </select>
+
+    <!--  使用 # 占位符来自动处理参数的转义和防止 SQL 注入, $ 占位符不会被预编译，它直接将参数值插入到 SQL 语句中  -->
+    <select id="groupBy" resultMap="BaseResultMap">
+        select `name`, count(1) as cnt from money
+        <if test="tt != null">
+            group by ${tt}
+        </if>
+    </select>
+
+    <select id="queryByBank" resultMap="BaseResultMap">
+        select * from money where `bank` = #{bank}
+    </select>
+
+    <select id="queryCnt" resultType="java.util.HashMap">
+        select `name`, count(1) as cnt from money group by `name`
+    </select>
+</mapper>

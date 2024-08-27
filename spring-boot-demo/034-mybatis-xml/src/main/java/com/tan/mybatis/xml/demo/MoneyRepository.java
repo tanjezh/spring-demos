@@ -23,6 +23,41 @@ public class MoneyRepository {
     @Autowired
     private MoneyMapperV2 moneyMapperV2;
 
+    /**
+     * 用于验证某些场景下，只能使用 ${}
+     */
+    public void groupBy() {
+        List<MoneyPo> list = moneyMapperV2.groupBy("name");
+        System.out.println(list);
+    }
+
+    /**
+     * 测试枚举类型的case
+     * <p>
+     * 知识点：
+     * 枚举类型，传入的参数，应该为String类型；如果是int，则表示根据枚举的下标索引来检索
+     * - 如枚举字段 bank ('2', '3', '1')
+     * - 传参 0 对应的是 '2'， 传参 '1' 对应的则是 '3'
+     */
+    public void testEnumQuery() {
+        // 枚举类型的查询，虽然定义的是字符串，但是传参为数字时，会有问题
+        List list = moneyMapperV2.queryByBank(1);
+        System.out.println(list);
+
+    }
+
+    /**
+     * 根据传递参数动态拼接SQL
+     */
+    public void testMulParameter(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", "tan");
+        map.put("id", 1);
+        moneyMapperV2.queryByCondition(map);
+        moneyMapperV2.queryByConditionV2(map);
+        moneyMapperV2.queryByConditionV3(map);
+    }
+
     public void testBasic() {
         MoneyPo po = new MoneyPo();
         po.setName("mybatis user");
