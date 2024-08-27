@@ -22,7 +22,10 @@ public class Application {
 //		repository.testArgumentReplace();
 
 //		repository.testResQuery();
-		repository.testV4();
+//		repository.testV4();
+
+		// 批量插入
+		repository.testBatchInsert();
 	}
 
 	public static void main(String[] args) {

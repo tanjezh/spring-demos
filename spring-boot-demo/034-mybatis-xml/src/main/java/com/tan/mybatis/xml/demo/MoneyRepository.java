@@ -1,11 +1,12 @@
 package com.tan.mybatis.xml.demo;
 
+import com.google.common.collect.Lists;
 import com.tan.mybatis.xml.entity.MoneyPo;
 import com.tan.mybatis.xml.entity.QueryBean;
-import com.tan.mybatis.xml.mapper.MoneyMapper;
-import com.tan.mybatis.xml.mapper.MoneyMapperV2;
-import com.tan.mybatis.xml.mapper.MoneyMapperV3;
-import com.tan.mybatis.xml.mapper.MoneyMapperV4;
+import com.tan.mybatis.xml.mapper.*;
+import org.apache.ibatis.session.ExecutorType;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +30,50 @@ public class MoneyRepository {
     private MoneyMapperV3 moneyMapperV3;
     @Autowired
     private MoneyMapperV4 moneyMapperV4;
+    @Autowired
+    private MoneyInsertMapper moneyInsertMapper;
+
+    @Autowired
+    private SqlSessionFactory sqlSessionFactory;
+
+    /**
+     * 直接使用 sqlsession 里的 mapper 执行操作
+     */
+    public void testBatchInsert() {
+        try (SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH)){
+            MoneyInsertMapper mapper = sqlSession.getMapper(MoneyInsertMapper.class);
+            for (int i = 0; i < 10; i++) {
+                mapper.save(buildPo());
+                sqlSession.commit();
+            }
+        }
+
+        List<MoneyPo> list = new ArrayList<>();
+        list.add(buildPo());
+        list.add(buildPo());
+        list.add(buildPo());
+        list.add(buildPo());
+        list.add(buildPo());
+        list.add(buildPo());
+        moneyInsertMapper.batchSave(list);
+
+        try (SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH, false)) {
+            MoneyInsertMapper moneyInsertMapper = sqlSession.getMapper(MoneyInsertMapper.class);
+            for (List<MoneyPo> subList : Lists.partition(list, 2)) {
+                moneyInsertMapper.batchSave(subList);
+            }
+            // TODO 出现 Error getting generated key or setting result to parameter object 错误
+            sqlSession.commit();
+        }
+    }
+
+    private MoneyPo buildPo() {
+        MoneyPo po = new MoneyPo();
+        po.setName("mybatis user");
+        po.setMoney((long) random.nextInt(12343));
+        po.setIsDeleted(0);
+        return po;
+    }
 
     public void testV4() {
         System.out.println(moneyMapperV4.queryByName("1"));
