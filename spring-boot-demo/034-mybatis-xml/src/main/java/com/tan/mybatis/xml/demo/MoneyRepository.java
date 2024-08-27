@@ -3,6 +3,7 @@ package com.tan.mybatis.xml.demo;
 import com.tan.mybatis.xml.entity.MoneyPo;
 import com.tan.mybatis.xml.mapper.MoneyMapper;
 import com.tan.mybatis.xml.mapper.MoneyMapperV2;
+import com.tan.mybatis.xml.mapper.MoneyMapperV3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +23,26 @@ public class MoneyRepository {
     private MoneyMapper moneyMapper;
     @Autowired
     private MoneyMapperV2 moneyMapperV2;
+    @Autowired
+    private MoneyMapperV3 moneyMapperV3;
+
+    /**
+     * 用于测试，mybatis中 #{} 替换的参数类型，是否会转换为String类型
+     */
+    public void testArgumentReplace() {
+        int name = 120;
+        List list = moneyMapperV3.queryByName(name);
+        System.out.println(list);
+
+        list = moneyMapperV3.queryByNameV2(name);
+        System.out.println(list);
+
+        list = moneyMapperV3.queryByNameV3(String.valueOf(name));
+        System.out.println(list);
+
+        list = moneyMapperV3.queryByNameV4(name);
+        System.out.println(list);
+    }
 
     /**
      * 用于验证某些场景下，只能使用 ${}

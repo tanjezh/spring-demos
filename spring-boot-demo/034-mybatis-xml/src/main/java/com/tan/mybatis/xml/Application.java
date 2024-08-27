@@ -16,7 +16,10 @@ public class Application {
 
 //		repository.groupBy();
 //		repository.testEnumQuery();
-		repository.testMulParameter();
+//		repository.testMulParameter();
+
+		// 参数替换测试
+		repository.testArgumentReplace();
 	}
 
 	public static void main(String[] args) {
