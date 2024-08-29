@@ -50,6 +50,8 @@
         <module>031-jpa</module>
         <module>032-jpa-errorcase</module>
         <module>033-jpa-errorcase2</module>
+        <module>034-mybatis-xml</module>
+        <module>035-mybatis-ano</module>
     </modules>
 
     <dependencies>

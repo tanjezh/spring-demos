@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//ibatis.apache.org//DTD Config 3.1//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <settings>
+        <!-- 驼峰下划线格式支持 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <package name="com.tan.mybatis.ano.entity"/>
+    </typeAliases>
+    <typeHandlers>
+        <typeHandler handler="com.tan.mybatis.ano.handler.Timestamp2LongHandler"/>
+    </typeHandlers>
+
+<!--    <plugins>-->
+<!--        <plugin interceptor="com.tan.mybatis.ano.interceptor.SqlStatInterceptor"/>-->
+<!--        <plugin interceptor="com.tan.mybatis.ano.interceptor.ExecuteStatInterceptor"/>-->
+<!--    </plugins>-->
+
+</configuration>
