@@ -7,6 +7,8 @@ import org.apache.ibatis.jdbc.SQL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -19,6 +21,15 @@ public class MoneyService {
 
     @Autowired
     private MoneyMapper moneyMapper;
+
+    public void findByIds(){
+        List<MoneyPo> list = moneyMapper.getByIds(Arrays.asList(1,2,3));
+        list.forEach(s -> {
+            System.out.println(s);
+        });
+        MoneyPo moneyPo = moneyMapper.getById(1);
+        System.out.println(moneyPo);
+    }
 
     public void basicTest() {
         int id = save();

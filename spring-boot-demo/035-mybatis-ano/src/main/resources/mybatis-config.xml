@@ -16,6 +16,7 @@
         <typeHandler handler="com.tan.mybatis.ano.handler.Timestamp2LongHandler"/>
     </typeHandlers>
 
+    <!-- xml方式配置拦截器 -->
 <!--    <plugins>-->
 <!--        <plugin interceptor="com.tan.mybatis.ano.interceptor.SqlStatInterceptor"/>-->
 <!--        <plugin interceptor="com.tan.mybatis.ano.interceptor.ExecuteStatInterceptor"/>-->

@@ -7,8 +7,10 @@ spring:
     password: root
 
 mybatis:
-  configuration:
-    map-underscore-to-camel-case: true # 驼峰与下划线互转支持
-    config-location: classpath:mybatis-config.xml
-    log-prefix: money
+#  configuration:
+#    map-underscore-to-camel-case: true # 驼峰与下划线互转支持
+#    config-location: classpath:mybatis-config.xml
+#    log-prefix: money
     # log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  config-location:  classpath:mybatis-config.xml
+# 注意：configuration 和 config-location 不能同时设置，否则会报错

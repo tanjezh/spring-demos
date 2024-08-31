@@ -70,6 +70,7 @@ public interface MoneyMapper {
 
     /**
      * 注意 SelectProvider 区别于 @Select 在于它指定一个类来生成sql
+     * 执行 MoneyService 的 getByIdSql 方法（返回 sql 语句）
      *
      * @param id
      * @return
@@ -90,7 +91,7 @@ public interface MoneyMapper {
     // ------------- 更多的查询姿势
 
     /**
-     * foreach 查询
+     * foreach 查询，通过 interceptor 过滤追踪 sql 执行情况时有问题，参数解析失败
      *
      * @param ids
      * @return
@@ -99,6 +100,7 @@ public interface MoneyMapper {
             "<foreach collection='ids' index='index' item='id' open='(' separator=',' close=')'>" +
             "#{id}" +
             "</foreach></script>")
+    @ResultMap(value = "moneyResultMap") // 缺少结果集对象会出现 Timestamp 转 Long 类型异常
     List<MoneyPo> getByIds(@Param("ids") List<Integer> ids);
 
 }
