@@ -52,6 +52,8 @@
         <module>033-jpa-errorcase2</module>
         <module>034-mybatis-xml</module>
         <module>035-mybatis-ano</module>
+        <module>036-mybatis-noxml</module>
+        <module>037-mybatis-plus</module>
     </modules>
 
     <dependencies>
