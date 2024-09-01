@@ -18,6 +18,11 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <!--
+            Invalid value type for attribute ‘factoryBeanObjectType‘: java.lang.String
+            依赖冲突问题，引入高版本的 mybatis-spring
+            https://blog.csdn.net/mocoll/article/details/137794647
+        -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>

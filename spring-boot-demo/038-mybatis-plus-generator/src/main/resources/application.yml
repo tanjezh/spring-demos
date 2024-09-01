@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: 038-mybatis-plus-generator
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/story?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
