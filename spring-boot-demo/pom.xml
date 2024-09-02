@@ -55,6 +55,7 @@
         <module>036-mybatis-noxml</module>
         <module>037-mybatis-plus</module>
         <module>038-mybatis-plus-generator</module>
+        <module>039-jooq-aop</module>
     </modules>
 
     <dependencies>
