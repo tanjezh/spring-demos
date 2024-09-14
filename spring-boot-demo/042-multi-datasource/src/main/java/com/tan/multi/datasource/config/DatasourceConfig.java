@@ -22,7 +22,7 @@ public class DatasourceConfig {
      *
      * @return
      */
-    @Primary
+//    @Primary
     @Bean(name = "storyDataSourceProperties")
     @ConfigurationProperties(prefix = "spring.datasource.story")
     public DataSourceProperties storyDataSourceProperties(){
@@ -35,7 +35,7 @@ public class DatasourceConfig {
      * @param storyDataSourceProperties
      * @return
      */
-    @Primary
+//    @Primary
     @Bean(name = "storyDataSource")
     public DataSource storyDataSource(@Qualifier("storyDataSourceProperties") DataSourceProperties storyDataSourceProperties){
         return storyDataSourceProperties.initializeDataSourceBuilder().build();
@@ -47,7 +47,7 @@ public class DatasourceConfig {
      * @param storyDataSource
      * @return
      */
-    @Primary
+//    @Primary
     @Bean(name = "storyJdbcTemplate")
     public JdbcTemplate storyJdbcTemplate(@Qualifier("storyDataSource") DataSource storyDataSource){
         return new JdbcTemplate(storyDataSource);

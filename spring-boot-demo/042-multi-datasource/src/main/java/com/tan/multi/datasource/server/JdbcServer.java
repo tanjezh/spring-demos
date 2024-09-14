@@ -1,6 +1,7 @@
 package com.tan.multi.datasource.server;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -17,16 +18,18 @@ import java.util.Map;
 @Service
 public class JdbcServer implements ApplicationContextAware {
 
+    @Autowired
     private JdbcTemplate storyJdbcTemplate;
 
+    @Autowired
     private JdbcTemplate testJdbcTemplate;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         Map<String, DataSource> map = applicationContext.getBeansOfType(DataSource.class);
         System.out.println(map);
-        storyJdbcTemplate = new JdbcTemplate(map.get("storyDataSource"));
-        testJdbcTemplate = new JdbcTemplate(map.get("testDataSource"));
+//        storyJdbcTemplate = new JdbcTemplate(map.get("storyDataSource"));
+//        testJdbcTemplate = new JdbcTemplate(map.get("testDataSource"));
     }
 
     public void query() {
