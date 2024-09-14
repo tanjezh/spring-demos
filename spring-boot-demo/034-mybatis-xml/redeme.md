@@ -11,7 +11,7 @@ Mapper接口与sql文件映射的四种姿势
     - 首先在配置文件中，指定加载参数 `mybatis.config-location=classpath:mybatis-config.xml`
     - 然后指定映射器 ` <mappers><mapper resource="sqlmapper/money-mapper.xml"/></mappers>`
 - SqlSessionFactory指定
-    - 直接在SqlSessionFactory中指定即可Mapper文件
+    - 直接在SqlSessionFactory中指定Mapper文件即可
 
 ```java
 // 设置mybatis的xml所在位置，这里使用mybatis注解方式，没有配置xml文件
