@@ -62,6 +62,8 @@
         <module>043-multi-datasource-mybatis</module>
         <module>044-multi-datasource-mybatis-ano</module>
         <module>045-multi-datasource-mybatis-plus</module>
+        <module>046-mongo-basic</module>
+        <module>047-mongo-template</module>
     </modules>
 
     <dependencies>
