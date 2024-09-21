@@ -61,6 +61,7 @@
         <module>042-multi-datasource</module>
         <module>043-multi-datasource-mybatis</module>
         <module>044-multi-datasource-mybatis-ano</module>
+        <module>045-multi-datasource-mybatis-plus</module>
     </modules>
 
     <dependencies>
