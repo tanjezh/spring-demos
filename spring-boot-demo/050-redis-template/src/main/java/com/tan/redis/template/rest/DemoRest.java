@@ -230,4 +230,35 @@ public class DemoRest {
         return "ok";
     }
 
+    @Autowired
+    private BitmapTest bitmapTest;
+
+    @GetMapping("bitmap")
+    public String showBitmap(){
+        Map<String, String> result = new HashMap<>(16);
+        /*
+          可以实现日活统计和点赞功能，日期设置为 key，用户id为 offset，浏览则设置标记，然后统计其个数。
+          根据是否被标记，判断是否已经点赞
+        */
+
+        // 给 key 的对应索引位置设置个标记
+        bitmapTest.mark("mark",1,true);
+        bitmapTest.mark("mark",0,false);
+        bitmapTest.mark("mark",10,true);
+
+        // 查看对应索引位置是否被标记，点赞
+        Boolean mark = bitmapTest.container("mark", 0);
+        Boolean mark1 = bitmapTest.container("mark", 1);
+        Boolean mark2 = bitmapTest.container("mark", 10);
+
+        result.put("index 0 is marked: ",String.valueOf(mark));
+        result.put("index 1 is marked: ",String.valueOf(mark1));
+        result.put("index 10 is marked: ",String.valueOf(mark2));
+
+        // 统计日活浏览量
+        long count = bitmapTest.bitCount("mark");
+        result.put("mark number is: ",String.valueOf(count));
+        return JSONObject.toJSONString(result);
+    }
+
 }
