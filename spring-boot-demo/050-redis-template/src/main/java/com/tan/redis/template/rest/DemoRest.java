@@ -221,6 +221,13 @@ public class DemoRest {
         return JSONObject.toJSONString(result);
     }
 
+    @Autowired
+    private PipelineTest pipelineTest;
 
+    @GetMapping("pipe")
+    public String showPipeline(){
+        pipelineTest.counter("pipe","first","test");
+        return "ok";
+    }
 
 }
