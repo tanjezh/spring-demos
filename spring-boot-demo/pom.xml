@@ -67,6 +67,7 @@
         <module>048-redis</module>
         <module>049-redis-jedis</module>
         <module>050-redis-template</module>
+        <module>051-redis-lettuce</module>
     </modules>
 
     <dependencies>
