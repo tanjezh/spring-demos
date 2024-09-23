@@ -261,4 +261,13 @@ public class DemoRest {
         return JSONObject.toJSONString(result);
     }
 
+    @Autowired
+    private PubSubTest pubSubTest;
+
+    @GetMapping(path = "pub")
+    public String pubTest(String key, String value) {
+        pubSubTest.publish(key, value);
+        return "over";
+    }
+
 }

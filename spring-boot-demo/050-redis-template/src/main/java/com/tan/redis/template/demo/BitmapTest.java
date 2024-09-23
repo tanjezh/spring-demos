@@ -7,6 +7,8 @@ import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 /**
+ * bitmap 位图使用
+ *
  * @author tanjezh
  * @create 2024-09-22 22:18
  */
