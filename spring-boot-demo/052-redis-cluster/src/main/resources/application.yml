@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: 052-redis-cluster
+  data:
+    redis:
+      cluster:
+        nodes: 127.0.0.1:7000,127.0.0.1:7001,127.0.0.1:7002
+        max-redirects: 3
+
+      jedis:
+        pool:
+          max-idle: 16
+          max-active: 32
+          min-idle: 8
