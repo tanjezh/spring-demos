@@ -81,4 +81,12 @@ public class ExtendDemoRest {
         return res;
     }
 
+    @GetMapping(path = "ttl")
+    public Map ttl(String k) {
+        Map<String, Object> res = new HashMap<>();
+        res.put("execute", extendDemo.ttl(k));
+        res.put("ttl", getTtl("ttl::" + k));
+        return res;
+    }
+
 }
