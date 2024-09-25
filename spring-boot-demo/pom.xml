@@ -69,6 +69,7 @@
         <module>050-redis-template</module>
         <module>051-redis-lettuce</module>
         <module>052-redis-cluster</module>
+        <module>053-cache-ano</module>
     </modules>
 
     <dependencies>
