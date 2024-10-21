@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 
 /**
- * 可以添加 redis 配置 ，因为默认的就是 localhost:6379
+ * 可以不在配置文件添加 redis 配置 ，因为默认的就是 localhost:6379
  */
 @EnableCaching // 开启缓存
 @SpringBootApplication

@@ -70,6 +70,7 @@
         <module>051-redis-lettuce</module>
         <module>052-redis-cluster</module>
         <module>053-cache-ano</module>
+        <module>054-redisson</module>
     </modules>
 
     <dependencies>
