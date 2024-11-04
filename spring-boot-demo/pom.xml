@@ -72,6 +72,7 @@
         <module>053-cache-ano</module>
         <module>054-redisson</module>
         <module>055-influxdb</module>
+        <module>056-influxdb-java</module>
     </modules>
 
     <dependencies>
