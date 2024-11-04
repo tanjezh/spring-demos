@@ -71,6 +71,7 @@
         <module>052-redis-cluster</module>
         <module>053-cache-ano</module>
         <module>054-redisson</module>
+        <module>055-influxdb</module>
     </modules>
 
     <dependencies>
