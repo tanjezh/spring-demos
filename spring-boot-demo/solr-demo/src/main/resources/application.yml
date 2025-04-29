@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: 045-solr
+
+  solr:
+    protocol: http
+    path: solr
+    host: localhost
+    port: 8983
+    collection: test_core
+    username: solr
+    password: admin123
