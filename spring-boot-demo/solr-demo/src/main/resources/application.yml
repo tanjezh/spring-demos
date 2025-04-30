@@ -9,4 +9,4 @@ spring:
     port: 8983
     collection: test_core
     username: solr
-    password: admin123
+    password: your_password
