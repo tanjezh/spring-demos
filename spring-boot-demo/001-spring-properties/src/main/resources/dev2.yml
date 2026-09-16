@@ -5,3 +5,4 @@ dev2:
     ary:
       - a: hello
       - b: world
+      - c: test
